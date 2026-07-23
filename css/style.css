@@ -120,6 +120,12 @@ p{ margin: 0 0 1em; color: var(--ink-soft); }
   .brand-tag{ display: inline; }
 }
 
+.nav-right{
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 1.8rem);
+}
+
 .nav-links{
   display: flex;
   gap: clamp(1rem, 2.5vw, 2.2rem);
@@ -154,8 +160,38 @@ p{ margin: 0 0 1em; color: var(--ink-soft); }
 
 .nav-toggle{ display: none; }
 
+.lang-switch{
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-left: clamp(0.75rem, 2vw, 1.4rem);
+  border-left: 1px solid var(--rose-line);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.lang-switch a{
+  color: var(--ink-soft);
+  padding: 0.15rem 0.25rem;
+}
+
+.lang-switch a:hover{ color: var(--accent); }
+
+.lang-switch a.active{
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.lang-switch .lang-sep{ color: var(--rose-line); }
+
 @media (max-width: 640px){
+  .nav-right{ flex-wrap: wrap; justify-content: flex-end; row-gap: 0.35rem; }
   .nav-links{ gap: 0.85rem; font-size: 0.82rem; }
+  .lang-switch{ padding-left: 0.6rem; font-size: 0.72rem; }
+}
+
+@media (max-width: 460px){
+  .lang-switch{ border-left: none; padding-left: 0; width: 100%; justify-content: flex-end; }
 }
 
 /* ---------------- Hero ---------------- */
