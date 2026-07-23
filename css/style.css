@@ -120,6 +120,12 @@ p{ margin: 0 0 1em; color: var(--ink-soft); }
   .brand-tag{ display: inline; }
 }
 
+.nav-right{
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 1.8rem);
+}
+
 .nav-links{
   display: flex;
   gap: clamp(1rem, 2.5vw, 2.2rem);
@@ -152,10 +158,112 @@ p{ margin: 0 0 1em; color: var(--ink-soft); }
 
 .nav-links a.active{ color: var(--accent); }
 
-.nav-toggle{ display: none; }
+.nav-toggle-input{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
 
-@media (max-width: 640px){
-  .nav-links{ gap: 0.85rem; font-size: 0.82rem; }
+.nav-toggle{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.nav-toggle span{
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
+}
+
+.nav-toggle-input:checked ~ .nav-toggle span:nth-child(1){
+  transform: translateY(7px) rotate(45deg);
+  width: 100%;
+}
+
+.nav-toggle-input:checked ~ .nav-toggle span:nth-child(2){ opacity: 0; }
+
+.nav-toggle-input:checked ~ .nav-toggle span:nth-child(3){
+  transform: translateY(-7px) rotate(-45deg);
+  width: 100%;
+}
+
+.lang-switch{
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-left: clamp(0.75rem, 2vw, 1.4rem);
+  border-left: 1px solid var(--rose-line);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.lang-switch a{
+  color: var(--ink-soft);
+  padding: 0.15rem 0.25rem;
+}
+
+.lang-switch a:hover{ color: var(--accent); }
+
+.lang-switch a.active{
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.lang-switch .lang-sep{ color: var(--rose-line); }
+
+@media (max-width: 780px){
+  .nav{ flex-wrap: wrap; }
+
+  .nav-toggle{ display: flex; }
+
+  .nav-right{
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-toggle-input:checked ~ .nav-right{
+    max-height: 420px;
+  }
+
+  .nav-links{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    font-size: 1rem;
+    padding-top: 0.85rem;
+  }
+
+  .nav-links a{
+    display: block;
+    width: 100%;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--rose-line);
+  }
+
+  .nav-links a::after{ display: none; }
+
+  .lang-switch{
+    border-left: none;
+    border-top: 1px solid var(--rose-line);
+    padding-left: 0;
+    padding-top: 0.85rem;
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* ---------------- Hero ---------------- */
