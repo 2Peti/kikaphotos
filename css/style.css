@@ -4,7 +4,9 @@
    Palette: blush ivory + deep aubergine + dusty rose hairlines.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap');
+/* Fonts are loaded from an async <link> in each page's <head> instead of
+   an @import here, so they don't chain behind this stylesheet and block
+   first render. */
 
 :root{
   --ink:        #2a2024;
