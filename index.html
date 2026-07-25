@@ -15,7 +15,12 @@
 <title>KikaPhotos</title>
 <meta name="description" content="Portréty, športy, akcie. Amatérska fotografia Kristíny Kaszbekovej.">
 <link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap"></noscript>
 <link rel="alternate" hreflang="sk" href="https://kikaphotos.com/">
 <link rel="alternate" hreflang="hu" href="https://kikaphotos.com/hu/">
 </head>
@@ -48,11 +53,12 @@
   </nav>
 </header>
 
+<main>
 <section class="hero" id="hero-slideshow">
   <div class="hero-slides">
-    <img src="assets/hero1.jpg" alt="Fotografia zo série Portréty" class="hero1 hero-slide is-active" width="2000" height="1260">
-    <img src="assets/hero2.jpg" alt="Fotografia zo série Športy" class="hero2 hero-slide" width="2000" height="1372">
-    <img src="assets/hero3.JPG" alt="Fotografia zo série Akcie" class="hero3 hero-slide" width="1920" height="1280">
+    <img src="assets/hero1-1280.webp" srcset="assets/hero1-640.webp 640w, assets/hero1-1280.webp 1280w, assets/hero1-1920.webp 1920w" sizes="100vw" alt="Fotografia zo série Portréty" class="hero1 hero-slide is-active" width="2000" height="1260" fetchpriority="high" decoding="async">
+    <img data-src="assets/hero2-1280.webp" data-srcset="assets/hero2-640.webp 640w, assets/hero2-1280.webp 1280w, assets/hero2-1920.webp 1920w" sizes="100vw" alt="Fotografia zo série Športy" class="hero2 hero-slide" width="2000" height="1372" decoding="async">
+    <img data-src="assets/hero3-1280.webp" data-srcset="assets/hero3-640.webp 640w, assets/hero3-1280.webp 1280w, assets/hero3-1920.webp 1920w" sizes="100vw" alt="Fotografia zo série Akcie" class="hero3 hero-slide" width="1920" height="1280" decoding="async">
   </div>
 
   <button type="button" class="hero-arrow hero-arrow-prev" aria-label="Predchádzajúca fotka">
@@ -84,20 +90,21 @@
 
     <div class="teasers">
       <a class="teaser" href="moja-praca.html#portraits">
-        <img src="assets/portrety-02.jpg" alt="Ukážka z galérie Portréty" loading="lazy">
+        <img src="assets/portrety-02.webp" alt="Ukážka z galérie Portréty" loading="lazy">
         <span class="teaser-label">Portréty</span>
       </a>
       <a class="teaser" href="moja-praca.html#sports">
-        <img src="assets/sporty-03.jpg" alt="Ukážka z galérie Športy" loading="lazy">
+        <img src="assets/sporty-03.webp" alt="Ukážka z galérie Športy" loading="lazy">
         <span class="teaser-label">Športy</span>
       </a>
       <a class="teaser" href="moja-praca.html#events">
-        <img src="assets/akcie-11.jpg" alt="Ukážka z galérie Akcie" loading="lazy">
+        <img src="assets/akcie-11.webp" alt="Ukážka z galérie Akcie" loading="lazy">
         <span class="teaser-label">Akcie</span>
       </a>
     </div>
   </div>
 </section>
+</main>
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
@@ -119,6 +126,28 @@
   var prevBtn = hero.querySelector('.hero-arrow-prev');
   var nextBtn = hero.querySelector('.hero-arrow-next');
   if (!slides.length) return;
+
+  // Only the first slide ships with a real src/srcset so it can win the
+  // race for LCP. The rest carry data-src/data-srcset and get swapped in
+  // right after the page finishes its initial load, so they never compete
+  // with the visible slide for bandwidth.
+  function loadDeferredSlides() {
+    slides.forEach(function (slide) {
+      if (slide.dataset.srcset) {
+        slide.srcset = slide.dataset.srcset;
+        delete slide.dataset.srcset;
+      }
+      if (slide.dataset.src) {
+        slide.src = slide.dataset.src;
+        delete slide.dataset.src;
+      }
+    });
+  }
+  if (document.readyState === 'complete') {
+    loadDeferredSlides();
+  } else {
+    window.addEventListener('load', loadDeferredSlides);
+  }
 
   var current = 0;
   var AUTO_DELAY = 6000;

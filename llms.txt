@@ -1,0 +1,26 @@
+# KikaPhotos
+
+> Portfolio site of Kristína Kaszbeková, an amateur photographer based in Slovakia. Kristína photographs portraits, sports, and events/concerts, and has been shooting since around 2022. The site is available in Slovak (default, at /) and Hungarian (at /hu/).
+
+KikaPhotos is a personal photography portfolio, not a company or agency. Prices are listed in euros and reflect informal/amateur rates, not professional studio pricing. Content below is grouped by language; each Slovak page has a matching Hungarian translation at the same path under /hu/.
+
+## Slovak (default)
+
+- [Úvod](https://kikaphotos.com/): Homepage with a rotating photo hero and links into the three galleries (portraits, sports, events).
+- [Moja práca](https://kikaphotos.com/moja-praca.html): Full portfolio, split into tabbed galleries for portréty (portraits), športy (sports), and akcie (events).
+- [Cenník](https://kikaphotos.com/cennik.html): Pricing for three categories - portraits & family sessions, sports events, and events/concerts - each with multiple tiers.
+- [O mne](https://kikaphotos.com/o-mne.html): Short bio - shooting since ~2022, focused on natural light and authentic emotion, moving into concert and sports photography.
+- [Kontakt](https://kikaphotos.com/kontakt.html): Name, e-mail (info@kikaphotos.com), and Instagram (@_kikaphotos_).
+
+## Hungarian (/hu/)
+
+- [Kezdőlap](https://kikaphotos.com/hu/): Hungarian homepage.
+- [Munkáim](https://kikaphotos.com/hu/moja-praca.html): Hungarian portfolio/galleries.
+- [Árlista](https://kikaphotos.com/hu/cennik.html): Hungarian pricing page.
+- [Rólam](https://kikaphotos.com/hu/o-mne.html): Hungarian bio.
+- [Kapcsolat](https://kikaphotos.com/hu/kontakt.html): Hungarian contact page.
+
+## Notes
+
+- This is a small static portfolio site; there is no blog, store, or API.
+- For an up-to-date list of every indexable URL, see [sitemap.xml](https://kikaphotos.com/sitemap.xml).
