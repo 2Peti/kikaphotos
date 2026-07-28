@@ -306,6 +306,10 @@ p{ margin: 0 0 1em; color: var(--ink-soft); }
   object-position: center 73%;
 }
 
+.hero4 {
+  object-position: center 65%;
+}
+
 .hero-slide.is-active{
   opacity: 0.88;
 }
