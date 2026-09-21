@@ -7,18 +7,18 @@ KikaPhotos is a personal photography portfolio, not a company or agency. Prices 
 ## Slovak (default)
 
 - [Úvod](https://kikaphotos.com/): Homepage with a rotating photo hero and links into the three galleries (portraits, sports, events).
-- [Moja práca](https://kikaphotos.com/moja-praca.html): Full portfolio, split into tabbed galleries for portréty (portraits), športy (sports), and akcie (events).
-- [Cenník](https://kikaphotos.com/cennik.html): Pricing for three categories - portraits & family sessions, sports events, and events/concerts - each with multiple tiers.
-- [O mne](https://kikaphotos.com/o-mne.html): Short bio - shooting since ~2022, focused on natural light and authentic emotion, moving into concert and sports photography.
-- [Kontakt](https://kikaphotos.com/kontakt.html): Name, e-mail (info@kikaphotos.com), and Instagram (@_kikaphotos_).
+- [Moja práca](https://kikaphotos.com/moja-praca): Full portfolio, split into tabbed galleries for portréty (portraits), športy (sports), and akcie (events).
+- [Cenník](https://kikaphotos.com/cennik): Pricing for three categories - portraits & family sessions, sports events, and events/concerts - each with multiple tiers.
+- [O mne](https://kikaphotos.com/o-mne): Short bio - shooting since ~2022, focused on natural light and authentic emotion, moving into concert and sports photography.
+- [Kontakt](https://kikaphotos.com/kontakt): Name, e-mail (info@kikaphotos.com), and Instagram (@_kikaphotos_).
 
 ## Hungarian (/hu/)
 
 - [Kezdőlap](https://kikaphotos.com/hu/): Hungarian homepage.
-- [Munkáim](https://kikaphotos.com/hu/moja-praca.html): Hungarian portfolio/galleries.
-- [Árlista](https://kikaphotos.com/hu/cennik.html): Hungarian pricing page.
-- [Rólam](https://kikaphotos.com/hu/o-mne.html): Hungarian bio.
-- [Kapcsolat](https://kikaphotos.com/hu/kontakt.html): Hungarian contact page.
+- [Munkáim](https://kikaphotos.com/hu/moja-praca): Hungarian portfolio/galleries.
+- [Árlista](https://kikaphotos.com/hu/cennik): Hungarian pricing page.
+- [Rólam](https://kikaphotos.com/hu/o-mne): Hungarian bio.
+- [Kapcsolat](https://kikaphotos.com/hu/kontakt): Hungarian contact page.
 
 ## Notes
 
